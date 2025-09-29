@@ -1,0 +1,225 @@
+/* Container for the entire app */
+.app-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: #121212; /* Dark background */
+  color: #e0e0e0; /* Light text */
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Controls section: stats, search, filter */
+.controls {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Stats text */
+.stats-bar p {
+  margin: 0 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #bbb;
+}
+
+/* Input and select styles */
+.controls input,
+.controls select {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid #444;
+  background-color: #1f1f1f;
+  color: #eee;
+  transition: border-color 0.3s ease;
+}
+
+.controls input::placeholder {
+  color: #777;
+}
+
+.controls input:focus,
+.controls select:focus {
+  outline: none;
+  border-color: #ff6f61; /* Accent color */
+  box-shadow: 0 0 5px #ff6f61;
+}
+
+/* Movie list grid */
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+/* Movie card styling */
+.movie-card {
+  background-color: #1e1e1e;
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 111, 97, 0.6); /* Accent glow */
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+  height: 300px; /* fixed height for uniform cards */
+}
+
+/* Movie title (now h2 instead of h1) */
+.movie-card h2 {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 600;
+  color: #ff6f61; /* Accent color */
+  overflow-wrap: break-word;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .controls {
+    flex-direction: column;
+  }
+
+  .stats-bar p {
+    margin: 0.25rem 0;
+  }
+
+  .movie-card img {
+    height: 220px;
+  }
+}
+
+.chart-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #ff6f61;
+  text-align: center;
+}
+
+.chart-row {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.chart-container {
+  flex: 1;
+  min-width: 300px;
+  height: 300px;
+}
+
+.movie-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Removed scaling from .movie-link:hover, only cards handle scaling */
+
+/* Navbar */
+.navbar {
+  background-color: #222;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ff6f61; /* Match your accent */
+}
+
+.nav-link:focus-visible {
+  outline: 2px solid #ff6f61;
+  outline-offset: 2px;
+}
+
+/* Movie detail card */
+.movie-detail-card {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 16px rgba(255, 111, 97, 0.4);
+}
+
+.movie-detail-card img {
+  max-width: 300px;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+.movie-detail-info {
+  max-width: 600px;
+  color: #e0e0e0;
+  text-align: left;
+}
+
+/* Movie detail title (now h2 instead of h1) */
+.movie-detail-info h2 {
+  color: #ff6f61;
+  margin-bottom: 1rem;
+}
+
+.chart-subtitle {
+  text-align: center;
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 0.5rem;
+}
+
+/* Status messages (loading/error/empty) */
+.status-message {
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+.status-message.loading {
+  color: #fff;
+}
+
+.status-message.error {
+  color: red;
+}
+
+.status-message.empty {
+  color: #ccc;
+}
+
+/* Keyboard focus states for movie links */
+.movie-link:focus-visible .movie-card {
+  box-shadow: 0 0 0 3px rgba(255, 111, 97, 0.6);
+}
