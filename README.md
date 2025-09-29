@@ -17,7 +17,8 @@ It provides search, language filtering, and interactive charts to visualize movi
 ---
 
 ## Demo
-_Adding GIF here_
+
+![Kapture 2025-09-29 at 00 43 53](https://github.com/user-attachments/assets/23392ca0-ac13-4ac0-9fa6-c47a6af1eea0)
 
 ---
 
